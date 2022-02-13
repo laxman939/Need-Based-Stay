@@ -1,0 +1,6 @@
+export const ActionTypes = {
+  FETCH_STAYS: "FETCH_STAYS",
+  SET_STAYS: "SET_STAYS",
+  HOUSE_CLICK: "HOUSE_CLICK",
+  PG_CLICK: "PG_CLICK",
+};
