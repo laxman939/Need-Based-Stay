@@ -1,0 +1,81 @@
+input,
+button {
+    border: none;
+    outline: none;
+    background: none;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    height: 3.3rem;
+    border-radius: 1rem;
+    color: rgb(24, 15, 143);
+    font-size: 0.98rem;
+    font-weight:bolder;
+    cursor: pointer;
+}
+
+
+label {
+    display: block;
+    width: 30%;
+    margin: 1.8rem auto 0;
+    text-align: center;
+}
+
+label span {
+    font-size: 0.8rem;
+    color: #9e9898;
+    text-transform: uppercase;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin-top: 0rem;
+    padding-bottom: 0.3rem;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.forgot-pass {
+    margin-top: 1rem;
+    margin-left: 0.3rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #7a7373;
+}
+
+.submit {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: #d4af7a;
+    text-transform: uppercase;
+}
+.avatar{
+    display: inline-block;
+    padding: 15px;
+}
+.welcome-header{
+    padding-top: 0.8rem;
+    width: 100%;
+}
+
+
+@media only screen and (min-width: 500px) {
+    .form {
+    position: relative;
+    height: 200%;
+    border: 1.3px solid;
+    padding: 1rem;
+    box-shadow: 5px 10px 18px #888888;
+    margin: 1% 30% 0% 30%;
+    padding: 0.7rem 1rem 1.5rem 0rem;
+    border-radius: 5%;
+    background-color: #e7e2dc;
+    }
+  }
