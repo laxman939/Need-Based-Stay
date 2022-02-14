@@ -7,25 +7,15 @@ export default function AreaTypeFilter() {
     <>
       <FormLabel id="roomtype">Area Type: </FormLabel>
       <div className="form-box">
-        <label htmlFor="single">
-          <input type="radio" name="room" id="single" />
+        <label htmlFor="city">
+          <input type="radio" name="area" id="city" />
           <div className="circle"></div>
-          <span className="filter-type-name">Single Share</span>
+          <span className="filter-type-name">City</span>
         </label>
-        <label htmlFor="two">
-          <input type="radio" name="room" id="two" />
+        <label htmlFor="outskirts">
+          <input type="radio" name="area" id="outskirts" />
           <div className="circle"></div>
-          <span className="filter-type-name">Two Share</span>
-        </label>
-        <label htmlFor="three">
-          <input type="radio" name="room" id="three" />
-          <div className="circle"></div>
-          <span className="filter-type-name">Three Share</span>
-        </label>
-        <label htmlFor="four">
-          <input type="radio" name="room" id="four" />
-          <div className="circle"></div>
-          <span className="filter-type-name">Four Share</span>
+          <span className="filter-type-name">OutSkirts</span>
         </label>
       </div>
     </>
