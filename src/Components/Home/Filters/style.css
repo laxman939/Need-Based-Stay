@@ -2,7 +2,7 @@ h5{
     display: block;
     margin-left: 18%;
     font-family: monospace;
-    margin-bottom: -9px;
+    margin-bottom: 9px;
     padding-top: 8px;
 }
 
@@ -39,8 +39,8 @@ h5{
     border: 1px solid tomato;
 }
 
-/* GENDER FILTER , PREFERRED FILTER, ROOM FILTER, HOUSE FILTER, HOUSEPREFERRED FILTER*/
-#pgfor, #roomtype, #preferredfor, #housetype, #housefor{
+/* GENDER, PREFERRED, ROOMTYPE, HOUSE, HOUSEPREFERRED, AREATYPE*/
+#pgfor, #roomtype, #preferredfor, #housetype, #housefor, #roomtype{
     color: rgb(150, 5, 65);
     font-size: 18px;
     font-weight: 900;
