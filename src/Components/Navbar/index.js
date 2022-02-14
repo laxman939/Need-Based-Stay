@@ -1,52 +1,50 @@
 import React from "react";
-import { Navbar } from "responsive-navbar-react";
+
 import "responsive-navbar-react/dist/index.css";
 
 import "./style.css";
 
-function NavigationBar() {
-  const props = {
-    items: [
-      {
-        text: "Home",
-        link: "/",
-      },
-      {
-        text: "Post Property",
-        link: "/postproperty",
-      },
-      {
-        text: "Sign Up",
-        link: "/signup",
-      },
-      {
-        text: "Sign In",
-        link: "/signin",
-      },
-      {
-        text: "Owner",
-        link: "/owner",
-      },
-      {
-        text: "User",
-        link: "/user",
-      },
-    ],
-    logo: {
-      text: "Need Based Stay",
-      link: "/",
-    },
-    style: {
-      barStyles: {
-        background: "green",
-      },
-      sidebarStyles: {
-        background: "blue",
-        buttonColor: "white",
-      },
-    },
-  };
-  return <Navbar {...props} />;
-}
+import {
+  Nav,
+  NavLink,
+  NavMenu,
+  Bars,
+  NavBtn,
+  NavBtnLink,
+} from "./NavbarElements.js";
+
+const NavigationBar = () => {
+  return (
+    <>
+      <Nav>
+        <NavBtn>
+          {/* <NavLink to="/">Logo</NavLink> */}
+          <NavBtnLink to="/">Need Based Stay</NavBtnLink>
+        </NavBtn>
+        <Bars />
+        <NavMenu>
+          <NavLink to="/home" activeStyle>
+            Home
+          </NavLink>
+          <NavLink to="/postproperty" activeStyle>
+            Post Property
+          </NavLink>
+          <NavLink to="/signup" activeStyle>
+            Sign Up
+          </NavLink>
+          <NavLink to="/signin" activeStyle>
+            Sign In
+          </NavLink>
+          <NavLink to="/owner" activeStyle>
+            Owner
+          </NavLink>
+          <NavLink to="/user" activeStyle>
+            User
+          </NavLink>
+        </NavMenu>
+      </Nav>
+    </>
+  );
+};
 
 export default NavigationBar;
