@@ -9,6 +9,7 @@ import PreferredFilter from "./Filters/Preferred";
 import RoomFilter from "./Filters/RoomFilter";
 import HouseFilter from "./Filters/HouseFilter";
 import HousePreferredFilter from "./Filters/HousePreferred";
+import AreaTypeFilter from "./Filters/AreaType";
 
 import { useSelector } from "react-redux";
 
@@ -27,14 +28,17 @@ function Home() {
             <h5>Filters</h5>
             <StayFilter />
             {!pgClicked ? (
-              <div>
+              <>
                 <div className="form-box">
                   <HouseFilter />
                 </div>
                 <div className="form-box">
                   <HousePreferredFilter />
                 </div>
-              </div>
+                <div className="form-box">
+                  <AreaTypeFilter />
+                </div>
+              </>
             ) : (
               <>
                 <div className="form-box">
@@ -45,6 +49,9 @@ function Home() {
                 </div>
                 <div className="form-box">
                   <RoomFilter />
+                </div>
+                <div className="form-box">
+                  <AreaTypeFilter />
                 </div>
               </>
             )}
