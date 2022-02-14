@@ -18,6 +18,7 @@ function App() {
         <NavigationBar />
         <Routes>
           <Route path="/" exact element={<Home />} />
+          <Route path="/home" exact element={<Home />} />
           <Route path="/postproperty" exact element={<PostProperty />} />
           <Route path="/signup" exact element={<SignUp />} />
           <Route path="/signin" exact element={<SignIn />} />
