@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import generateUserName from "generate-username-from-email";
+import generateUserName from "generate-username-from-email"; //To get username from mail
 
 import "antd/dist/antd.css";
 import { Avatar } from "antd";
@@ -11,7 +11,6 @@ import "./style.css";
 import Validation from "./validation";
 
 export default function SignIn(props) {
-  //States
   const [values, setValues] = useState({
     mail: "",
     password: "",
@@ -22,9 +21,7 @@ export default function SignIn(props) {
   const [errors, setErrors] = useState({});
 
   //Handle functions
-  //To update state with user inputs
   function handleChange(event) {
-    //Updating state based on name
     setValues({
       ...values,
       [event.target.name]: event.target.value,
@@ -37,7 +34,6 @@ export default function SignIn(props) {
     //validating inputs
     setErrors(Validation(values));
 
-    //updating state when signin button clicked
     setUserName(values);
 
     //To Eliminate numbers and  Extract username
@@ -49,26 +45,27 @@ export default function SignIn(props) {
     //Updating userName with capName.
     setUserName(capName);
 
-    //Passing as parameters to app component;(or) Controlling the state in App component
+    //Passing as parameters to app component;(or) Controlling the state from App component
     props.handleUser(userName);
   }
 
   return (
-    <div className="sign-in">
+    <div className="signinPage">
       <div className="avatar">
         <Avatar
-          size={70}
+          size={62}
           style={{
             backgroundColor: "#020d1f",
           }}
           icon={<UserOutlined />}
         />
-        <h2 className="welcome-header">Welcome</h2>
+        <h4 className="header">Welcome</h4>
       </div>
       <div>
-        <label>
+        <label className="label">
           <span>Email</span>
           <input
+            className="input"
             type="email"
             onChange={handleChange}
             name="mail"
@@ -78,9 +75,10 @@ export default function SignIn(props) {
       </div>
       {errors.mail && <p className="error">{errors.mail}</p>}
       <div>
-        <label>
+        <label className="label">
           <span>Password</span>
           <input
+            className="input"
             type="password"
             onChange={handleChange}
             name="password"
@@ -89,11 +87,15 @@ export default function SignIn(props) {
         </label>
       </div>
       {errors.password && <p className="error">{errors.password}</p>}
-      <div>
+      {/* <div>
         <p className="forgot-pass">Forget password?</p>
-      </div>
+      </div> */}
       <div>
-        <button className="submit" type="submit" onClick={handleSigninBtn}>
+        <button
+          className="submit button"
+          type="submit"
+          onClick={handleSigninBtn}
+        >
           Sign In
         </button>
       </div>

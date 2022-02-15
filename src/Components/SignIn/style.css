@@ -1,11 +1,6 @@
 
 /*  SIGNUP AND SIGNIN */
 
-
-/* .signupPage, .signinPage{
-    align-items: center;
-} */
-
 .input,
 .button {
     border: none;
@@ -100,8 +95,37 @@
   } 
 
   /* ROLE SELECTION */
-  .select-role{
-      display: inline-flex;
-      justify-items: center;
-      padding: 5px;
+  .role{
+      display: flex;
+      justify-content: center;
   }
+  .role_select{
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(66, 57, 55);
+    margin: 5px 5px 0px 5px;
+
+}
+.role_input{
+    display: none;
+}
+.role_label{
+    padding: 2px 8px;
+    text-align: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: rgb(177, 194, 132);
+    cursor: pointer;
+}
+.role_label:hover{
+    opacity: 0.8;
+}
+.role_label:not(:last-of-type){
+    border-right: 1px solid burlywood;
+}
+.role_input:checked + .role_label{
+    color: beige;
+    background: rgb(110, 100, 2); 
+    border: 1px solid tomato;
+}
