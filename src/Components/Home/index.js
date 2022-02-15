@@ -10,6 +10,8 @@ import RoomFilter from "./Filters/RoomFilter";
 import HouseFilter from "./Filters/HouseFilter";
 import HousePreferredFilter from "./Filters/HousePreferred";
 import AreaTypeFilter from "./Filters/AreaType";
+import TopLocations from "./Filters/TopLocations";
+import SearchLocation from "./Filters/SearchLocation";
 
 import { useSelector } from "react-redux";
 
@@ -20,8 +22,12 @@ function Home() {
     <>
       <Container className="container-box">
         <Row className="locations">
-          <Col className="location">Top location</Col>
-          <Col className="location">Location search</Col>
+          <Col className="location">
+            <TopLocations />
+          </Col>
+          <Col className="location">
+            <SearchLocation />
+          </Col>
         </Row>
         <Row>
           <Col xs={4} md={3} sm={4} className="filters-section">

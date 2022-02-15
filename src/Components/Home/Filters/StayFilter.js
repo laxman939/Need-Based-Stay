@@ -28,7 +28,7 @@ export default function StayFilter() {
 
   return (
     <>
-      <div>
+      <div className="stays">
         <div className="radio">
           <input
             className="radio_input"
