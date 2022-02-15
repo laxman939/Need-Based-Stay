@@ -1,114 +1,158 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-function SignUp() {
+import ValidationForSignup from "./validation";
+// import "./style.css";
+
+import "antd/dist/antd.css";
+import { Avatar } from "antd";
+import { UserOutlined } from "@ant-design/icons";
+import Role from "./Role";
+
+export default function SignUp(props) {
+  //States
+  const [inputValues, setInputValues] = useState({
+    fName: "",
+    lName: "",
+    nmbr: "",
+    signupMail: "",
+    signupPswrd: "",
+  });
+
+  //States to pass to App component
+  // const [userData, setUserData] = useState({});
+
+  //State for Error Validation
+  const [error, setError] = useState({});
+
+  //To update state
+  function handleChange(event) {
+    setInputValues({
+      ...inputValues,
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  //To handle Signup
+  function handleSignupBtn(event) {
+    event.preventDefault();
+    if (inputValues.signupPswrd === inputValues.signupCPswrd) {
+      //Error validation
+      setError(ValidationForSignup(inputValues));
+
+      //To update state
+      // setUserData(inputValues);
+      //console.log("Signup" + userData.signupMail + userData.signupPswrd);
+
+      //To pass to App component
+      // props.handleSignupUser(userData);
+    } else {
+      alert("Password and Confirm password are must be same");
+    }
+  }
+
   return (
-    <>
-      <section className="mb-5">
-        <h4 className="mb-5 text-center">
-          <strong>Facilis consequatur eligendi</strong>
-        </h4>
+    <div className="signupPage">
+      <div className="avatar">
+        <Avatar
+          size={62}
+          style={{
+            backgroundColor: "#020d1f",
+          }}
+          icon={<UserOutlined />}
+        />
 
-        <div className="row d-flex justify-content-center">
-          <div className="col-md-6">
-            <form>
-              <div className="row mb-4">
-                <div className="col">
-                  <div className="form-outline">
-                    <input
-                      type="text"
-                      id="form3Example1"
-                      className="form-control"
-                    />
-                    <label className="form-label" htmlFor="form3Example1">
-                      First name
-                    </label>
-                  </div>
-                </div>
-                <div className="col">
-                  <div className="form-outline">
-                    <input
-                      type="text"
-                      id="form3Example2"
-                      className="form-control"
-                    />
-                    <label className="form-label" htmlFor="form3Example2">
-                      Last name
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div className="form-outline mb-4">
-                <input
-                  type="email"
-                  id="form3Example3"
-                  className="form-control"
-                />
-                <label className="form-label" htmlFor="form3Example3">
-                  Email address
-                </label>
-              </div>
-              <div className="form-outline mb-4">
-                <input
-                  type="password"
-                  id="form3Example4"
-                  className="form-control"
-                />
-                <label className="form-label" htmlFor="form3Example4">
-                  Password
-                </label>
-              </div>
-              <div className="form-check d-flex justify-content-center mb-4">
-                <input
-                  className="form-check-input me-2"
-                  type="checkbox"
-                  value=""
-                  id="form2Example3"
-                  checked
-                />
-                <label
-                  className="form-check-label"
-                  htmlFor="form2Example3"
-                ></label>
-              </div>
-              <button type="submit" className="btn btn-primary btn-block mb-4">
-                Sign up
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </>
+        <h4 className="header">Create your Account</h4>
+      </div>
+      <Role />
+      <div>
+        <label className="label">
+          <span>First Name</span>
+          <input
+            className="input"
+            type="text"
+            name="fName"
+            value={inputValues.fName}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+      {error.signupName && <p className="error">{error.signupName}</p>}
+
+      <div>
+        2
+        <label className="label">
+          <span>Last Name</span>
+          <input
+            className="input"
+            type="text"
+            name="lName"
+            value={inputValues.lName}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+      {error.signupName && <p className="error">{error.signupName}</p>}
+
+      <div>
+        <label className="label">
+          <span>Phone Number</span>
+          <input
+            className="input"
+            type="tel"
+            name="nmbr"
+            value={inputValues.nmbr}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+      {/* {error.signupCPswrd && <p className="error">{error.signupCPswrd}</p>} */}
+
+      <div>
+        <label className="label">
+          <span>Email</span>
+          <input
+            className="input"
+            type="email"
+            name="signupMail"
+            value={inputValues.signupMail}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+      {error.signupMail && <p className="error">{error.signupMail}</p>}
+
+      <div>
+        <label className="label">
+          <span>Password</span>
+          <input
+            className="input"
+            type="password"
+            name="signupPswrd"
+            value={inputValues.signupPswrd}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+      {error.signupPswrd && <p className="error">{error.signupPswrd}</p>}
+
+      <div>
+        <button
+          type="submit"
+          className="submit button"
+          onClick={handleSignupBtn}
+        >
+          Sign Up
+        </button>
+      </div>
+      <div>
+        <p className="form-link">
+          If you already has an account, just
+          <Link to="/signin" style={{ textDecoration: "none" }}>
+            &nbsp;Sign In
+          </Link>
+        </p>
+      </div>
+    </div>
   );
 }
-
-export default SignUp;
-/* <div className="text-center">
-<p>or sign up with:</p>
-<button
-  type="button"
-  className="btn btn-primary btn-floating mx-1"
->
-  <i className="fab fa-facebook-f"></i>
-</button>
-
-<button
-  type="button"
-  className="btn btn-primary btn-floating mx-1"
->
-  <i className="fab fa-google"></i>
-</button>
-
-<button
-  type="button"
-  className="btn btn-primary btn-floating mx-1"
->
-  <i className="fab fa-twitter"></i>
-</button>
-
-<button
-  type="button"
-  className="btn btn-primary btn-floating mx-1"
->
-  <i className="fab fa-github"></i>
-</button>
-</div> */
