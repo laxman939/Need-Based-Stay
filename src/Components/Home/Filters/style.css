@@ -7,6 +7,9 @@ h5{
 }
 
 /* STAY FILTER */
+.stays{
+    margin-left: -20px;
+}
 .radio{
     display: inline-flex;
     overflow: hidden;
@@ -57,7 +60,7 @@ h5{
     flex-direction: row;
     flex-wrap: wrap;
     width: 95%;
-      margin:2px;
+    margin:2px;
     padding-left: 0px;
     line-height: 2;
   }
@@ -109,4 +112,7 @@ h5{
   .form-box label input:checked + .circle + span{
       color:#855207;
   }
-  
+  /* SEARCH COMPONENT */
+  .search-component{
+      margin-top: 10px;
+  }
