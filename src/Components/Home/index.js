@@ -12,6 +12,8 @@ import HousePreferredFilter from "./Filters/HousePreferred";
 import AreaTypeFilter from "./Filters/AreaType";
 import TopLocations from "./Filters/TopLocations";
 import SearchLocation from "./Filters/SearchLocation";
+import HouseResults from "./HouseResults";
+import PgResults from "./PgResults";
 
 import { useSelector } from "react-redux";
 
@@ -63,14 +65,8 @@ function Home() {
             )}
           </Col>
           <Col>
-            <h1>Hello</h1>
-            <h1>Hello</h1>
-          </Col>
-          <Col>
-            <div>
-              <h1>Hello</h1>
-              <h1>Hello</h1>
-            </div>
+            <HouseResults />
+            <PgResults />
           </Col>
         </Row>
       </Container>
