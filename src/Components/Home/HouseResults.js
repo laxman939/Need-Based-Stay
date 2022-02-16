@@ -2,7 +2,7 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 
-import Loader from "../Spinner/Loader";
+// import Loader from "../Spinner/Loader";
 
 // import { Link } from "react-router-dom";
 
@@ -13,7 +13,7 @@ function HouseResults() {
 
   return (
     <>
-      {!stays && <Loader />}
+      {!stays && <h1>Loading...</h1>}
       {stays &&
         stays.map((house) => (
           <div className="property-container" key={house._id}>
