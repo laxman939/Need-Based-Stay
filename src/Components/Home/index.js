@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./style.css";
 
 import { Container, Col, Row } from "react-bootstrap";
@@ -19,6 +17,7 @@ import { useSelector } from "react-redux";
 
 function Home() {
   const pgClicked = useSelector((state) => state.Pg.pgClick);
+  const houseClicked = useSelector((state) => state.House.houseClick);
 
   return (
     <>
@@ -35,7 +34,7 @@ function Home() {
           <Col xs={4} md={3} sm={4} className="filters-section">
             <h5>Filters</h5>
             <StayFilter />
-            {!pgClicked ? (
+            {!pgClicked && (
               <>
                 <div className="form-box">
                   <HouseFilter />
@@ -47,7 +46,8 @@ function Home() {
                   <AreaTypeFilter />
                 </div>
               </>
-            ) : (
+            )}
+            {!houseClicked && (
               <>
                 <div className="form-box">
                   <GenderFilter />
@@ -64,10 +64,7 @@ function Home() {
               </>
             )}
           </Col>
-          <Col>
-            <HouseResults />
-            <PgResults />
-          </Col>
+          <Col>{pgClicked ? <PgResults /> : <HouseResults />}</Col>
         </Row>
       </Container>
     </>
