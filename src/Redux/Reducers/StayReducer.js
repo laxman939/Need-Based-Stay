@@ -1,11 +1,14 @@
 import { ActionTypes } from "../Constants/action-types";
 
-const { HOUSE_CLICK, PG_CLICK, FETCH_STAYS } = ActionTypes;
+const { HOUSE_CLICK, PG_CLICK, FETCH_STAYS, ROLE } = ActionTypes;
 
-let initialState = {
+export let initialState = {
   stays: [],
   houseClick: false,
   pgClick: false,
+  role: "",
+  signup: false,
+  signin: true.valueOf,
 };
 
 export function fetchStaysReducer(state = initialState, action) {
@@ -40,6 +43,19 @@ export function PgClickReducer(state = initialState, action) {
       return {
         ...state,
         pgClick: action.payload,
+      };
+
+    default:
+      return state;
+  }
+}
+
+export function RoleReducer(state = initialState, action) {
+  switch (action.type) {
+    case ROLE:
+      return {
+        ...state,
+        role: action.payload,
       };
 
     default:
