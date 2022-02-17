@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 // import { Link } from "react-router-dom";
 
 function HouseResults() {
-  const stays = useSelector((state) => state.stays.stays);
+  const stays = useSelector((state) => state.Stays.stays);
 
   console.log("stays " + stays);
 
@@ -19,7 +19,7 @@ function HouseResults() {
           <div className="property-container" key={house._id}>
             {/* <Link to={single post}> */}
             <div className="row single-property">
-              <div className="row">
+              <div className="row row-one">
                 <div className="col">
                   <h5>{house.propertyName}</h5>
                   <footer>
@@ -27,21 +27,22 @@ function HouseResults() {
                     {house.propertyLocation}
                   </footer>
                 </div>
-                <div className="col">
-                  {/* <p>
-            <span>Gender: </span>
-            {house.gender}
-          </p> */}
-                </div>
+                <div className="col"></div>
               </div>
-              <hr />
-              <div className="row">
+              <div className="row row-two">
                 <div className="col">
-                  <img
-                    id="image"
-                    src="https://st4.depositphotos.com/16030310/25210/v/600/depositphotos_252105266-stock-illustration-vector-illustration-silver-golden-letters.jpg"
+                  {
+                    <img
+                      className="image-container"
+                      src={house.propertyImage[0]}
+                      alt="houses"
+                    />
+                  }
+                  {/* <img
+                    className="image"
+                    src={house.propertyImage[1]}
                     alt="house"
-                  />
+                  /> */}
                 </div>
                 <div className="col">
                   <h5>Details</h5>
