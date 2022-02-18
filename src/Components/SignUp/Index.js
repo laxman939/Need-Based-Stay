@@ -21,11 +21,12 @@ export default function SignUp() {
 
   const [inputValues, setInputValues] = useState({
     // roleType: role,
-    fName: "",
-    lName: "",
-    nmbr: "",
-    signupMail: "",
-    signupPswrd: "",
+    firstName: "",
+    lastName: "",
+    emailId: "",
+    phoneNumber: "",
+    userName: "",
+    password: "",
   });
 
   //To convert first character to uppercase
@@ -50,13 +51,13 @@ export default function SignUp() {
     //Error validation
     setError(ValidationForSignup(inputValues));
 
-    console.log("inputValues " + inputValues.fName);
+    console.log("inputValues " + inputValues.firstName);
 
     // To convert  first
     setOwnerName(
-      capitalizeFirstLetter(inputValues.fName) +
+      capitalizeFirstLetter(inputValues.firstName) +
         " " +
-        capitalizeFirstLetter(inputValues.lName)
+        capitalizeFirstLetter(inputValues.lastName)
     );
 
     postData();
@@ -64,9 +65,7 @@ export default function SignUp() {
   // https://need-based-stay.herokuapp.com/api/user/signup
   function postData() {
     fetchApi
-      .post(`/${role}/signup`, {
-        data: inputValues,
-      })
+      .post(`/${role}/signup`, inputValues)
       .then((response) => console.log(response.data))
       .catch((err) => console.log(err.response.data));
   }
@@ -93,8 +92,8 @@ export default function SignUp() {
               <input
                 className="input"
                 type="text"
-                name="fName"
-                value={inputValues.fName}
+                name="firstName"
+                value={inputValues.firstName}
                 onChange={handleChange}
               />
             </label>
@@ -107,8 +106,8 @@ export default function SignUp() {
               <input
                 className="input"
                 type="text"
-                name="lName"
-                value={inputValues.lName}
+                name="lastName"
+                value={inputValues.lastName}
                 onChange={handleChange}
               />
             </label>
@@ -121,13 +120,25 @@ export default function SignUp() {
               <input
                 className="input"
                 type="tel"
-                name="nmbr"
-                value={inputValues.nmbr}
+                name="phoneNumber"
+                value={inputValues.phoneNumber}
                 onChange={handleChange}
               />
             </label>
           </div>
           {/* {error.signupCPswrd && <p className="error">{error.signupCPswrd}</p>} */}
+          <div>
+            <label className="label">
+              <span>User Name</span>
+              <input
+                className="input"
+                type="text"
+                name="userName"
+                value={inputValues.userName}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
 
           <div>
             <label className="label">
@@ -135,13 +146,13 @@ export default function SignUp() {
               <input
                 className="input"
                 type="email"
-                name="signupMail"
-                value={inputValues.signupMail}
+                name="emailId"
+                value={inputValues.emailId}
                 onChange={handleChange}
               />
             </label>
           </div>
-          {error.signupMail && <p className="error">{error.signupMail}</p>}
+          {error.emailId && <p className="error">{error.emailId}</p>}
 
           <div>
             <label className="label">
@@ -149,13 +160,13 @@ export default function SignUp() {
               <input
                 className="input"
                 type="password"
-                name="signupPswrd"
-                value={inputValues.signupPswrd}
+                name="password"
+                value={inputValues.password}
                 onChange={handleChange}
               />
             </label>
           </div>
-          {error.signupPswrd && <p className="error">{error.signupPswrd}</p>}
+          {error.password && <p className="error">{error.password}</p>}
 
           <div>
             <button
@@ -168,7 +179,7 @@ export default function SignUp() {
           </div>
           <div>
             <p className="form-link">
-              If you already has an account, just
+              If you already have an account, just
               <Link to="/signin" style={{ textDecoration: "none" }}>
                 &nbsp;Sign In
               </Link>
