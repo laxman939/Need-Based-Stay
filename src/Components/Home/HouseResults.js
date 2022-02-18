@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 function HouseResults() {
   const stays = useSelector((state) => state.Stays.stays);
 
-  console.log("stays " + stays);
+  // console.log("stays " + stays);
 
   return (
     <>

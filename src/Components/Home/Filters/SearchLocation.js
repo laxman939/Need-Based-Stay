@@ -10,7 +10,7 @@ export default function SearchLocation() {
   const [search, setSearch] = useState();
   const [searchValue, setSearchValue] = useState();
 
-  console.log(searchValue);
+  // console.log(searchValue);
 
   function handleClick() {
     setSearchValue(search);
