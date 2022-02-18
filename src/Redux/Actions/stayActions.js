@@ -2,8 +2,16 @@ import { ActionTypes } from "../Constants/action-types";
 
 import fetchApi from "../../Apis/fetchStay";
 
-const { HOUSE_CLICK, PG_CLICK, FETCH_STAYS, ROLE, SIGNIN_CLICK, SIGNUP_CLICK } =
-  ActionTypes;
+const {
+  HOUSE_CLICK,
+  PG_CLICK,
+  FETCH_STAYS,
+  ROLE,
+  SIGNIN_CLICK,
+  SIGNUP_CLICK,
+  USER_NAME,
+  OWNER_NAME,
+} = ActionTypes;
 
 export const fetchStays = () => async (dispatch) => {
   const response = await fetchApi.get("/filter"); //Middleware  --> sync to async
@@ -43,6 +51,18 @@ export function SigninClick(status) {
   return {
     type: SIGNIN_CLICK,
     payload: status,
+  };
+}
+export function getOwnerName(name) {
+  return {
+    type: OWNER_NAME,
+    payload: name,
+  };
+}
+export function getUserName(name) {
+  return {
+    type: USER_NAME,
+    payload: name,
   };
 }
 
