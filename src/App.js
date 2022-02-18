@@ -31,3 +31,10 @@ function App() {
 }
 
 export default App;
+/* <Route exact path="/signup">
+  {!isSignup ? (
+    <SignUp handleSignupUser={handleSignupUser} />
+  ) : (
+    <Redirect to="/signin" />
+  )}
+</Route>; */
