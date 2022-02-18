@@ -1,14 +1,17 @@
 import { ActionTypes } from "../Constants/action-types";
 
-const { HOUSE_CLICK, PG_CLICK, FETCH_STAYS, ROLE } = ActionTypes;
+const { HOUSE_CLICK, PG_CLICK, FETCH_STAYS, ROLE, OWNER_NAME, USER_NAME } =
+  ActionTypes;
 
 export let initialState = {
   stays: [],
   houseClick: false,
   pgClick: false,
   role: "",
+  owner: "",
+  user: "",
   signup: false,
-  signin: true.valueOf,
+  signin: false,
 };
 
 export function fetchStaysReducer(state = initialState, action) {
@@ -56,6 +59,30 @@ export function RoleReducer(state = initialState, action) {
       return {
         ...state,
         role: action.payload,
+      };
+
+    default:
+      return state;
+  }
+}
+export function OwnerNameReducer(state = initialState, action) {
+  switch (action.type) {
+    case OWNER_NAME:
+      return {
+        ...state,
+        owner: action.payload,
+      };
+
+    default:
+      return state;
+  }
+}
+export function UserNameReducer(state = initialState, action) {
+  switch (action.type) {
+    case USER_NAME:
+      return {
+        ...state,
+        user: action.payload,
       };
 
     default:
