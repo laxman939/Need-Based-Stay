@@ -16,6 +16,11 @@ export default function HouseFilter() {
           <div className="circle"></div>
           <span>Independent</span>
         </label>
+        <label>
+          <input type="radio" name="HouseType" />
+          <div className="circle"></div>
+          <span>Gated Community</span>
+        </label>
       </div>
     </>
   );
