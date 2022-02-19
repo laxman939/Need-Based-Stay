@@ -1,11 +1,13 @@
-import * as React from "react";
+import React from "react";
+import Role from "../SignUp/Role";
 
 function PostProperty() {
   return (
     <>
+      <Role />
       <form className="post-property-container">
         <fieldset>
-          <legend>Personalia:</legend>
+          <legend>Property Details</legend>
           <label for="ownerName">Owner Name</label>
           <input type="text" id="ownerName" name="ownerName" />
 
