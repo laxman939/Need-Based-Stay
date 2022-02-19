@@ -70,7 +70,7 @@ h5{
   }
   .form-box label {
       cursor: pointer;
-    padding: 1px 15px;
+      padding: 1px 15px;
       position: relative;
   }
   .form-box label .circle{
@@ -96,12 +96,14 @@ h5{
       transform: scale(0);
   }
   .form-box label span{
-    width: 115px;
-      font-size: 15px;
-      color: rgb(92, 53, 2);
-      display: flex;
-    justify-content: space-around;
-      transition:.2s ease-in-out 0s;
+    width: 140px;
+    font-size: 15px;
+    color: rgb(92, 53, 2);
+    display: flex;
+    justify-content: left;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    transition: .2s ease-in-out 0s;
   }
   .form-box label input:checked + .circle{
       border-color:#df640b;
