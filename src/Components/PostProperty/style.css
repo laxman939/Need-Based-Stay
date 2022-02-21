@@ -1,3 +1,66 @@
 .post-property-container{
+    background-color: #edede4;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+ select{
+    font-size: 12px;
+    padding: 6px;
+}
+.stay-select{
+    padding: 15px;
+}
+.prop-section{
+    display: inline-flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 98%;
+    margin: 1px;
+    padding: 2px;
+}
+.prop-label {
+    margin: 4px 0px;
+    padding: 5px 0px;
+    font-size: 0.96rem;
+    color: #535151;
+}
+
+.prop-input,
+.prop-button, select{
+    border: none;
+    background: rgb(219, 219, 218);
+    border-radius: 15px;
+}
+
+.prop-button {
+    display: block;
+    margin: 20px auto;
+    width: 20%;
+    height: 2.6rem;
+    border-radius: 1rem;
+    color: rgb(24, 18, 2);
+    background-color: rgb(206, 160, 101);
+    font-size: 1rem;
+    font-weight:bolder;
+    cursor: pointer;
+}
+.prop-button:hover{
+    background-color: rgb(165, 110, 7);
+    color: rgb(17, 1, 9);
+    box-shadow: 2px 2px 1px 0px rgb(92, 1, 5);
+}
+
+.prop-input {
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    margin-top: 0rem;
+    padding: 0.3rem;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     text-align: center;
 }
