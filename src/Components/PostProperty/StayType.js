@@ -1,46 +1,46 @@
 import React from "react";
 
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-// import { actionCreators } from "../../Redux/index";
+import { actionCreators } from "../../Redux/index";
 
 function StayType() {
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  //   const { RoleCheck } = actionCreators;
+  const { postClickAction } = actionCreators;
 
-  //   function selectRole(event) {
-  //     console.log(event.target.value);
+  function selectStay(event) {
+    // console.log("Post " + event.target.value);
 
-  //     dispatch(RoleCheck(event.target.value));
-  //   }
+    dispatch(postClickAction(event.target.value));
+  }
 
   return (
     <>
-      <div className="role">
-        <div className="role_select">
+      <div className="stay">
+        <div className="stay_select">
           <input
-            className="role_input"
+            className="stay_input"
             type="radio"
             name="myRadio"
             value="house"
             id="myRadio1"
-            // onClick={selectRole}
+            onClick={selectStay}
           />
-          <label className="role_label" htmlFor="myRadio1">
+          <label className="stay_label" htmlFor="myRadio1">
             House
           </label>
         </div>
-        <div className="role_select">
+        <div className="stay_select">
           <input
-            className="role_input"
+            className="stay_input"
             type="radio"
             name="myRadio"
             value="pg"
             id="myRadio2"
-            // onClick={selectRole}
+            onClick={selectStay}
           />
-          <label className="role_label" htmlFor="myRadio2">
+          <label className="stay_label" htmlFor="myRadio2">
             PG
           </label>
         </div>

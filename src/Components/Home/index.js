@@ -31,7 +31,7 @@ function Home() {
           </Col>
         </Row>
         <Row>
-          <Col xs={4} md={3} sm={4} className="filters-section">
+          <Col xs={5} md={3} sm={4} className="filters-section">
             <h5>Filters</h5>
             <StayFilter />
             {!pgClicked && (
