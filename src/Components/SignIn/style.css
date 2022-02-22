@@ -60,9 +60,9 @@
     opacity: 0.8;
 }
 .submit:hover{
-    background-color: #9c6c28;
+    background-color: #6b7e03;
    box-shadow: 0px 0px 0px 4px rgb(122, 115, 4);
-   color: #082401;
+   color: #041302;
 }
 .avatar{
     padding: 10px;
@@ -98,18 +98,23 @@
     border-radius: 5%;
     background-color: #e7e2dc;
     }
+
   } 
 
   /* ROLE SELECTION */
   .role{
-      display: flex;
+      display: inline-flex;
+      flex-direction: row;
       justify-content: center;
+      padding: 5px;
+      background-color: #819705;
+      border-radius: 20px;
+      margin:0% 43%;
   }
   .role_select{
     display: inline-flex;
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgb(66, 57, 55);
     margin: 5px 5px 0px 5px;
 
 }
@@ -120,18 +125,31 @@
     padding: 2px 8px;
     text-align: center;
     font-size: 16px;
-    font-family: sans-serif;
-    background-color: rgb(177, 194, 132);
     cursor: pointer;
 }
 .role_label:hover{
-    opacity: 0.8;
+    opacity: 0.9;
+    box-shadow: 0 0 3px rgb(66, 57, 55);
+ 
 }
-.role_label:not(:last-of-type){
-    border-right: 1px solid burlywood;
-}
+/* .role_label:not(:last-of-type){
+    border: 1px solid burlywood;
+} */
 .role_input:checked + .role_label{
     color: beige;
-    background: rgb(110, 100, 2); 
-    border: 1px solid tomato;
+    background: rgb(61, 55, 0); 
+    border: 1px solid rgb(161, 29, 5);
+  
 }
+@media only screen and (max-width: 500px) {
+    .role{
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 5px;
+        background-color: #819705;
+        border-radius: 20px;
+        margin:0% 34%;
+    }
+
+  } 

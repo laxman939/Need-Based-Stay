@@ -1,6 +1,6 @@
 h5{
     display: block;
-    margin-left: 18%;
+    margin-left: 15%;
     font-family: monospace;
     margin-bottom: 9px;
     padding-top: 8px;
@@ -8,15 +8,21 @@ h5{
 
 /* STAY FILTER */
 .stays{
-    margin-left: -20px;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+    background-color: #90966e;
+    border-radius: 25px;
+    margin-left: -10px;
 }
 .radio{
     display: inline-flex;
     overflow: hidden;
-    width: 90%;
+    width: 100%;
     border-radius: 25px;
-    box-shadow: 0 0 5px rgb(66, 57, 55);
-    margin: 3%;
+    margin: 2%;
 
 }
 .radio_input{
@@ -27,27 +33,38 @@ h5{
     padding: 8px;
     text-align: center;
     font-size: 16px;
-    font-family: sans-serif;
-    background-color: rgb(220, 226, 204);
     cursor: pointer;
 }
 .radio_label:hover{
-    opacity: 0.85;
+    opacity: 0.8;
 }
 .radio_label:not(:last-of-type){
     border-right: 1px solid burlywood;
 }
 .radio_input:checked + .radio_label{
-    background: rgb(138, 209, 24); 
-    border: 1px solid tomato;
+    background: rgb(110, 64, 4); 
+    color: rgb(172, 171, 169);
 }
+
+@media only screen and (max-width: 500px) {
+    .stays{
+        display: inline-block;
+        flex-direction: row;
+        justify-content: center;
+        padding: 5px;
+        background-color: #90966e;
+        border-radius: 25px;
+        margin:1%;
+    }
+
+  } 
 
 /* GENDER, PREFERRED, ROOMTYPE, HOUSE, HOUSEPREFERRED, AREATYPE*/
 #pgfor, #roomtype, #preferredfor, #housetype, #housefor, #roomtype{
     color: rgb(150, 5, 65);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 900;
-    width: 190px;
+    width: 200px;
     letter-spacing: 1px;
     text-align: left;
     padding: 1%;
@@ -74,8 +91,8 @@ h5{
       position: relative;
   }
   .form-box label .circle{
-      height: 16px;
-      width: 16px;
+      height: 15px;
+      width: 15px;
       border:2px solid #998f8f;
       border-radius: 50%;
       position: absolute;
@@ -97,7 +114,7 @@ h5{
   }
   .form-box label span{
     width: 140px;
-    font-size: 15px;
+    font-size: 14px;
     color: rgb(92, 53, 2);
     display: flex;
     justify-content: left;

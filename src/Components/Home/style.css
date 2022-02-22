@@ -1,8 +1,4 @@
 /* Main Container */
-/* .container-box{
-    box-sizing: border-box;
-    border: 1px solid grey;
-} */
 
 /* Locations */
 .locations{
@@ -28,6 +24,12 @@
     border-right:2px solid gray ;
 }
 
+@media only screen and (max-width: 500px) {
+
+
+  } 
+
+
 /* Responsive */
 @media (min-width: 1200px){
 .container, .container-lg, .container-md, .container-sm, .container-xl {
@@ -44,7 +46,7 @@
     
 }
 .single-property{
-    margin: 8px 1px;
+    margin: 8px 10px;
     box-shadow: 0px 4px 8px 3px grey;
     border-radius: 8px;
   }
@@ -55,11 +57,11 @@
 
 .row-two{
     padding: 0px 5px;
-    margin: 0px 5px;
+    margin: 0px 15px;
     border-top: 1px solid grey;
 }
 
 img{
-    width:80%;
+    width:160px;
     padding: 4px;
 }
