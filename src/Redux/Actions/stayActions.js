@@ -11,6 +11,7 @@ const {
   SIGNUP_CLICK,
   USER_NAME,
   OWNER_NAME,
+  POST_CLICK,
 } = ActionTypes;
 
 export const fetchStays = () => async (dispatch) => {
@@ -65,6 +66,13 @@ export function getUserName(name) {
     payload: name,
   };
 }
+
+export const postClickAction = (status) => {
+  return {
+    type: POST_CLICK,
+    payload: status,
+  };
+};
 
 // export const UserSignup = (userData) => {
 //   return {

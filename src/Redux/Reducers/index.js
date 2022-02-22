@@ -6,6 +6,7 @@ import HouseClickReducer, {
   RoleReducer,
   OwnerNameReducer,
   UserNameReducer,
+  PostClickReducer,
 } from "./StayReducer";
 // imported default export and normal export
 
@@ -16,6 +17,7 @@ const reducers = combineReducers({
   Role: RoleReducer,
   Owner: OwnerNameReducer,
   User: UserNameReducer,
+  PostClick: PostClickReducer,
 });
 
 export default reducers;
