@@ -56,8 +56,7 @@ function PostProperty() {
     }
   }
 
-  // showRef.current.style.display = "block";
-
+  // To get values
   function handleChange(e) {
     setHouse({
       [e.target.name]: e.target.value,
