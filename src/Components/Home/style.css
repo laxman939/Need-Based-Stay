@@ -1,5 +1,12 @@
 /* Main Container */
 
+/* Loader */
+.loader{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
 /* Locations */
 .locations{
     display: flex;
@@ -24,10 +31,6 @@
     border-right:2px solid gray ;
 }
 
-@media only screen and (max-width: 500px) {
-
-
-  } 
 
 
 /* Responsive */
@@ -58,7 +61,7 @@
 .row-two{
     padding: 0px 5px;
     margin: 0px 15px;
-    border-top: 1px solid grey;
+    
 }
 
 img{
