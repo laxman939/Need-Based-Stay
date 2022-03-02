@@ -1,0 +1,111 @@
+
+  
+  /* .page {
+    height: 100vh;
+    background-color: #512da8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+  .user-section{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+  }
+
+  .user-main{
+      background-color: rgb(143, 172, 172);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 16px;
+      padding: 8px;
+      border-radius: 10px;
+  }
+
+  .img-container {
+    height: 220px;
+    width: 200px;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 3px;
+  }
+  .heading {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  .img-holder {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border: 3px black solid;
+    border-radius: 5px;
+    margin-top: 1rem;
+  }
+  .img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  #input[type="file"] {
+    display: none;
+  }
+  .label {
+    font-size: 12px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+  }
+  .image-upload {
+    margin: auto;
+    width: 150px;
+    height: 40px;
+    color: white;
+    border-radius: 10px;
+    background-color: black;
+    text-align: center;
+    cursor: pointer;
+  }
+  label > i {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      width: 30px;
+  }
+  .material-icons{
+      padding-top:6px;
+  }
+
+
+  .logout{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 16px;
+      padding: 8px;
+    }
+  .button {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    height: 2.6rem;
+    color: rgb(247, 239, 239);
+    font-size: 0.98rem;
+    font-weight:bolder;
+    cursor: pointer;
+}
+
+.logout-btn {
+    background-color: #704305;
+    width: 120px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 16px;
+}
+.logout:hover{
+    background-color: #6b7e03;
+    box-shadow: 0px 0px 0px 4px rgb(122, 115, 4);
+
+}
