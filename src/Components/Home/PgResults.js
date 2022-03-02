@@ -9,6 +9,7 @@ function PgResults() {
             <h5>Pg1</h5>
             <p>Location</p>
           </div>
+          <hr />
         </div>
         <div className="row row-two">
           <div className="col">
