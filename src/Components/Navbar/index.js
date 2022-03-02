@@ -1,48 +1,33 @@
 import React from "react";
-
-import "responsive-navbar-react/dist/index.css";
+import { NavLink } from "react-router-dom";
 
 import "./style.css";
-
-import {
-  Nav,
-  NavLink,
-  NavMenu,
-  Bars,
-  NavBtn,
-  NavBtnLink,
-} from "./NavbarElements.js";
 
 const NavigationBar = () => {
   return (
     <>
-      <Nav>
-        <NavBtn>
-          {/* <NavLink to="/">Logo</NavLink> */}
-          <NavBtnLink to="/">Need Based Stay</NavBtnLink>
-        </NavBtn>
-        <Bars />
-        <NavMenu>
-          <NavLink to="/home" activeStyle>
-            Home
-          </NavLink>
-          <NavLink to="/postproperty" activeStyle>
+      <div className="Nav-section">
+        <NavLink to="/" className="nav-head">
+          Need Based Stay
+        </NavLink>
+        <div className="nav-links">
+          <NavLink to="/postproperty" className="link">
             Post Property
           </NavLink>
-          <NavLink to="/signup" activeStyle>
+          <NavLink to="/signup" className="link">
             Sign Up
           </NavLink>
-          <NavLink to="/signin" activeStyle>
+          <NavLink to="/signin" className="link">
             Sign In
           </NavLink>
-          <NavLink to="/owner" activeStyle>
+          {/* <NavLink to="/owner" className="link">
             Owner
+          </NavLink> */}
+          <NavLink to="/user" className="link">
+            Profile
           </NavLink>
-          <NavLink to="/user" activeStyle>
-            User
-          </NavLink>
-        </NavMenu>
-      </Nav>
+        </div>
+      </div>
     </>
   );
 };
