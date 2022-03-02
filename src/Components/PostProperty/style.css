@@ -31,9 +31,9 @@
 }
 .stay_label{
     width: 100%;
-    padding: 10px;
+    padding: 6px;
     text-align: center;
-    font-size: 14px;
+    font-size: 17px;
     font-family: sans-serif;
     cursor: pointer;
 }
@@ -49,23 +49,32 @@
     font-weight: 900
 }
 
+/* Property */
  select{
-    font-size: 0.82rem;
+    font-size: 14px;
     padding: 6px;
+}
+option{
+    background-color: #7a8b8f;
+    font-size: 14px;
+    border: 4px solid green !important;
+    border-radius: 6px;
 }
 
 .prop-section{
     display: inline-flex;
     justify-content: space-evenly;
+    align-items: center;
     flex-direction: row;
     width: 98%;
     margin: 1px;
-    padding: 8px;
+    padding: 6px;
 }
 .prop-label {
     margin: 4px 0px;
     padding: 5px 0px;
-    font-size: 0.82rem;
+    font-size: 15px;
+    font-weight: 500;
     color: #535151;
 }
 
@@ -73,7 +82,7 @@
 .prop-button, select{
     border: none;
     background: rgb(219, 219, 218);
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 .prop-button {
@@ -81,7 +90,7 @@
     margin: 20px auto;
     width: 20%;
     height: 2.6rem;
-    border-radius: 1rem;
+    border-radius: 10px;
     color: rgb(24, 18, 2);
     background-color: rgb(206, 160, 101);
     font-size: 1rem;
@@ -117,3 +126,107 @@
     }
 
   } 
+  .location-type{
+      margin-top: 5px;
+  }
+  /* Near By */
+  .near-prop-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 1px;
+    padding: 6px;
+  }
+
+  /* Image */
+  .img-prop-section{
+      position: relative;
+  }
+  .image-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 1px;
+    padding: 6px;
+  }
+  .img-prop-label{
+      font-size: 17px;
+      font-weight: 500;
+  }
+
+  /* Room Type */
+  .multipleSelection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+.mSelection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* #select-option{
+    color: #819705;
+    background-color: #4F615E;
+} */
+
+.selectBox {
+    position: relative;
+    z-index: 10;
+}
+
+.selectBox select {
+    width: 100%;
+    font-weight: bold;
+  
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+   
+}
+
+#checkBoxes {
+    color: #201d02;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+#checkBoxes label {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+
+}
+
+#checkBoxes label:hover {
+    background-color: #778180;
+    border-radius: 5px;
+}
+/* Near By */
+#nearCheckBoxes {
+    color: #201d02;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+#nearCheckBoxes label {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+
+}
+
+#nearCheckBoxes label:hover {
+    background-color: #778180;
+    border-radius: 5px;
+}
