@@ -22,13 +22,14 @@ export default function SearchLocation() {
         <input
           className="form-control me-2"
           type="search"
-          placeholder="Search"
+          placeholder="Search...."
           aria-label="Search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <button
           className="btn btn-outline-success"
+          id="search-btn"
           type="submit"
           onClick={handleClick}
         >

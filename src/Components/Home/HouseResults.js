@@ -2,19 +2,20 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 
-// import Loader from "../Spinner/Loader";
-
-// import { Link } from "react-router-dom";
+import { LoadingOutlined } from "@ant-design/icons";
 
 function HouseResults() {
   const stays = useSelector((state) => state.Stays.stays);
 
-  // console.log("stays " + stays);
+  console.log("stays " + stays);
 
   return (
     <>
-      {!stays && <h1>Loading...</h1>}
-      {stays &&
+      {stays.length === 0 ? (
+        <h1 className="loader">
+          <LoadingOutlined style={{ fontSize: "20vh", color: "black" }} />
+        </h1>
+      ) : (
         stays.map((house) => (
           <div className="property-container" key={house._id}>
             {/* <Link to={single post}> */}
@@ -58,7 +59,8 @@ function HouseResults() {
             </div>
             {/* </Link> */}
           </div>
-        ))}
+        ))
+      )}
     </>
   );
 }
