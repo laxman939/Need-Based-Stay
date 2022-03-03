@@ -144,9 +144,9 @@ function PostProperty() {
 
           {click === "pg" && (
             <>
-              <div className="prop-section">
-                <div>
-                  <label htmlFor="preference" className="prop-label">
+              <div className="prop-section-pg">
+                <div className="prop-pg">
+                  <label htmlFor="preference" className="prop-label-pg">
                     Preference: &nbsp;
                   </label>
                   <select id="preference">
@@ -156,8 +156,8 @@ function PostProperty() {
                   </select>
                 </div>
 
-                <div>
-                  <label htmlFor="gender" className="prop-label">
+                <div className="prop-pg">
+                  <label htmlFor="gender" className="prop-label-pg">
                     Gender: &nbsp;
                   </label>
                   <select id="gender">
@@ -167,10 +167,10 @@ function PostProperty() {
                     <option value="female">Female</option>
                   </select>
                 </div>
-                <div>
+                <div className="prop-pg">
                   <label
                     htmlFor="property-type"
-                    className="prop-label location-type"
+                    className="prop-label-pg location-type"
                   >
                     Location Type: &nbsp;
                   </label>
@@ -187,9 +187,9 @@ function PostProperty() {
           <div className="prop-section">{/*  priceRange-- Todo */}</div>
 
           {click === "house" && (
-            <div className="prop-section">
-              <div>
-                <label htmlFor="houseType" className="prop-label">
+            <div className="prop-section-house">
+              <div className="prop-house">
+                <label htmlFor="houseType" className="prop-label-house">
                   House Type: &nbsp;
                 </label>
                 <select id="houseType">
@@ -199,8 +199,8 @@ function PostProperty() {
                 </select>
               </div>
 
-              <div>
-                <label htmlFor="househtmlFor" className="prop-label">
+              <div className="prop-house">
+                <label htmlFor="househtmlFor" className="prop-label-house">
                   House For: &nbsp;
                 </label>
                 <select id="househtmlFor">
@@ -209,10 +209,10 @@ function PostProperty() {
                   <option value="bachelors">Bachelor's</option>
                 </select>
               </div>
-              <div>
+              <div className="prop-house">
                 <label
                   htmlFor="property-type"
-                  className="prop-label location-type"
+                  className="prop-label-house location-type"
                 >
                   Location Type: &nbsp;
                 </label>
@@ -313,22 +313,21 @@ function PostProperty() {
             <label htmlFor="property-pics" className="img-prop-label">
               Images
             </label>
-            <div className="image-section">
-              <div>
-                <input
-                  type="file"
-                  id="property-pics"
-                  className="img-prop-input"
-                  name="propertyImage"
-                  value={house.propertyImage}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <button type="submit" className="upload-btn">
-                  Upload
-                </button>
-              </div>
+
+            <div className="img-section">
+              <input
+                type="file"
+                id="property-pics"
+                className="img-prop-input"
+                name="propertyImage"
+                value={house.propertyImage}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="img-section">
+              <button type="submit" className="upload-btn">
+                Upload
+              </button>
             </div>
           </div>
 

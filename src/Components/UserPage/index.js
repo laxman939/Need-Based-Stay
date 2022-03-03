@@ -17,39 +17,41 @@ function UserPage() {
   };
 
   return (
-    <div className="user-section">
-      <div className="user-main">
-        <h2 style={{ textAlign: "center" }}>User Profile</h2>
-        <div class="card">
-          <div className="img-container">
-            <h4 className="heading">Add your Image</h4>
-            <div className="img-holder">
-              <img src={profileImg} alt="" id="img" className="img" />
+    <>
+      <div className="user-section">
+        <div className="user-main">
+          <h2 style={{ textAlign: "center" }}>User Information</h2>
+          <div className="card">
+            <div className="img-container">
+              <h4 className="heading">Add your Image</h4>
+              <div className="img-holder">
+                <img src={profileImg} alt="" id="img" className="img" />
+              </div>
+              <input
+                type="file"
+                accept="image/*"
+                name="image-upload"
+                id="input"
+                onChange={() => imageHandler}
+              />
+              <div className="label-img">
+                <label className="image-upload" htmlFor="input">
+                  <i className="material-icons">add_photo_alternate</i>
+                  Choose your Photo
+                </label>
+              </div>
             </div>
-            <input
-              type="file"
-              accept="image/*"
-              name="image-upload"
-              id="input"
-              onChange={() => imageHandler}
-            />
-            <div className="label">
-              <label className="image-upload" htmlFor="input">
-                <i className="material-icons">add_photo_alternate</i>
-                Choose your Photo
-              </label>
-            </div>
+            <h3>Name:</h3>
+            <p>Mail: </p>
           </div>
-          <h3>Name:</h3>
-          <p>Mail: </p>
+        </div>
+        <div className="logout">
+          <button type="submit" className="logout-btn lg-button">
+            Logout
+          </button>
         </div>
       </div>
-      <div className="logout">
-        <button type="submit" className="logout-btn button">
-          Logout
-        </button>
-      </div>
-    </div>
+    </>
   );
 }
 
