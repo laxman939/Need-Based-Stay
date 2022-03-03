@@ -2,27 +2,22 @@ import * as React from "react";
 
 import "./style.css";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { actionCreators } from "../../../Redux/index";
 
 import { fetchStays } from "../../../Redux/Actions/stayActions";
 
 export default function StayFilter() {
-  const { pgClick, houseClick } = useSelector((state) => state);
-
   const dispatch = useDispatch();
 
-  const { pgClickAction, houseClickAction } = actionCreators;
+  const { getStayTypeClick } = actionCreators;
 
-  const handleClickPg = () => {
-    dispatch(pgClickAction(!pgClick));
-    dispatch(houseClickAction(houseClick));
+  const handleClickPg = (e) => {
+    dispatch(getStayTypeClick(e.target.value));
   };
-  const handleClickHouse = () => {
-    dispatch(pgClickAction(pgClick));
-    dispatch(houseClickAction(!houseClick));
-
+  const handleClickHouse = (e) => {
+    dispatch(getStayTypeClick(e.target.value));
     dispatch(fetchStays());
   };
 

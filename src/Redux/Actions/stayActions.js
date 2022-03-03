@@ -3,8 +3,7 @@ import { ActionTypes } from "../Constants/action-types";
 import fetchApi from "../../Apis/fetchStay";
 
 const {
-  HOUSE_CLICK,
-  PG_CLICK,
+  STAY_CLICK,
   FETCH_STAYS,
   ROLE,
   SIGNIN_CLICK,
@@ -14,6 +13,7 @@ const {
   POST_CLICK,
 } = ActionTypes;
 
+// To get stays data
 export const fetchStays = () => async (dispatch) => {
   const response = await fetchApi.get("/filter"); //Middleware  --> sync to async
 
@@ -23,37 +23,47 @@ export const fetchStays = () => async (dispatch) => {
   });
 };
 
-export const houseClickAction = (status) => {
+// To dispaly stays based on stay click type(House or PG)
+export const getStayTypeClick = (stayType) => {
   return {
-    type: HOUSE_CLICK,
-    payload: status,
+    type: STAY_CLICK,
+    payload: stayType,
   };
 };
-export function pgClickAction(status) {
-  return {
-    type: PG_CLICK,
-    payload: status,
-  };
-}
 
-export function RoleCheck(role) {
+// Role(Owner or User) check to pass data to backend
+export function roleCheck(role) {
   return {
     type: ROLE,
     payload: role,
   };
 }
-export function SignupClick(status) {
+
+// Sign up button click
+export function signupClick(status) {
   return {
     type: SIGNUP_CLICK,
     payload: status,
   };
 }
-export function SigninClick(status) {
+
+// Sign in button Click
+export function signinClick(status) {
   return {
     type: SIGNIN_CLICK,
     payload: status,
   };
 }
+
+// To display fields based on staytype(Post Property)
+export const postClickAction = (status) => {
+  return {
+    type: POST_CLICK,
+    payload: status,
+  };
+};
+
+// To display in profile page ownername and username
 export function getOwnerName(name) {
   return {
     type: OWNER_NAME,
@@ -66,17 +76,3 @@ export function getUserName(name) {
     payload: name,
   };
 }
-
-export const postClickAction = (status) => {
-  return {
-    type: POST_CLICK,
-    payload: status,
-  };
-};
-
-// export const UserSignup = (userData) => {
-//   return {
-//     type: SIGNUP_USER_VALUES,
-//     payload: userData,
-//   };
-// };

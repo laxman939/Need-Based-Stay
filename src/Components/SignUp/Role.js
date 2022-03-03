@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { actionCreators } from "../../Redux/index";
 
@@ -9,12 +9,12 @@ function Role() {
 
   // const [roleType, setRoleType] = useState("");
 
-  const { RoleCheck } = actionCreators;
+  const { roleCheck } = actionCreators;
 
   function selectRole(event) {
     console.log(event.target.value);
 
-    dispatch(RoleCheck(event.target.value));
+    dispatch(roleCheck(event.target.value));
   }
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import ValidationForSignup from "./validation";
 
@@ -15,10 +15,6 @@ export default function SignUp() {
 
   // console.log("state role " + role);
 
-  const dispatcher = useDispatch();
-
-  const [ownerName, setOwnerName] = useState();
-
   const [inputValues, setInputValues] = useState({
     // roleType: role,
     firstName: "",
@@ -28,11 +24,6 @@ export default function SignUp() {
     userName: "",
     password: "",
   });
-
-  //To convert first character to uppercase
-  function capitalizeFirstLetter(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
 
   //State for Error Validation
   const [error, setError] = useState({});
@@ -52,13 +43,6 @@ export default function SignUp() {
     setError(ValidationForSignup(inputValues));
 
     console.log("inputValues " + inputValues.firstName);
-
-    // To convert  first
-    setOwnerName(
-      capitalizeFirstLetter(inputValues.firstName) +
-        " " +
-        capitalizeFirstLetter(inputValues.lastName)
-    );
 
     postData();
   }

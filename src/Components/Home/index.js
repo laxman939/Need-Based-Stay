@@ -16,8 +16,9 @@ import PgResults from "./PgResults";
 import { useSelector } from "react-redux";
 
 function Home() {
-  const pgClicked = useSelector((state) => state.Pg.pgClick);
-  const houseClicked = useSelector((state) => state.House.houseClick);
+  const stayClickType = useSelector((state) => state.StayClick.stayClick);
+
+  console.log("stayClickType " + stayClickType);
 
   return (
     <>
@@ -34,7 +35,7 @@ function Home() {
           <Col xs={5} md={3} sm={4} className="filters-section">
             <h5>Filters</h5>
             <StayFilter />
-            {!pgClicked && (
+            {stayClickType === "houses" && (
               <>
                 <div className="form-box">
                   <HouseFilter />
@@ -47,7 +48,7 @@ function Home() {
                 </div>
               </>
             )}
-            {!houseClicked && (
+            {stayClickType === "pgs" && (
               <>
                 <div className="form-box">
                   <GenderFilter />
@@ -64,7 +65,9 @@ function Home() {
               </>
             )}
           </Col>
-          <Col>{pgClicked ? <PgResults /> : <HouseResults />}</Col>
+          <Col>
+            {stayClickType === "pgs" ? <PgResults /> : <HouseResults />}
+          </Col>
         </Row>
       </Container>
     </>

@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
 
-import HouseClickReducer, {
-  PgClickReducer,
+import StayClickReducer, {
   fetchStaysReducer,
   RoleReducer,
   OwnerNameReducer,
@@ -12,8 +11,7 @@ import HouseClickReducer, {
 
 const reducers = combineReducers({
   Stays: fetchStaysReducer,
-  House: HouseClickReducer,
-  Pg: PgClickReducer,
+  StayClick: StayClickReducer,
   Role: RoleReducer,
   Owner: OwnerNameReducer,
   User: UserNameReducer,
