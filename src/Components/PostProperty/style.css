@@ -12,18 +12,18 @@
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
-    width: 20%;
+    width: 24%;
     padding: 5px;
     font-weight: 800;
     background-color: #959e60;
-    border-radius: 25px;
+    border-radius: 20px;
 }
 .stay_select{
     display: inline-flex;
     overflow: hidden;
-    width: 100%;
+    width: 50vw;
     border-radius: 25px;
-    margin: 1%;
+    margin: 2px;
 
 }
 .stay_input{
@@ -44,9 +44,14 @@
     border-right: 1px solid burlywood;
 }
 .stay_input:checked + .stay_label{
-    background: rgb(62, 100, 2); 
-    color: rgb(112, 3, 3);
+    background: rgb(51, 80, 4); 
+    color: rgb(236, 229, 229);
     font-weight: 900
+}
+legend{
+    font-family: monospace;
+    font-size: larger;
+    font-weight:900;
 }
 
 /* Property */
@@ -62,8 +67,8 @@ option{
 }
 
 .prop-section{
-    display: inline-flex;
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
     width: 98%;
@@ -115,17 +120,108 @@ option{
 }
 @media only screen and (max-width: 500px) {
     .stay{
-        display: inline-flex;
+        display: flex;
         flex-direction: row;
+        justify-self: center;
         justify-content: center;
-        width: 34%;
+        width: 46%;
         padding: 5px;
-        background-color: #819705;
+        background-color: #aaaf8e;
         border-radius: 20px;
-        margin:0% 34%;
+        margin:0% 28%;
     }
 
+    .stay_label{
+        width: 180px;
+        padding: 6px;
+        text-align: center;
+        font-size: 18px;
+        font-family: sans-serif;
+        cursor: pointer;
+    }
+
+ /* House */
+  .prop-section-house{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 4px 0px;
+    padding:12px 2px;
+  }
+
+  .prop-label-house{
+    margin: 4px 0px;
+    padding: 5px 0px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #535151;
+  }
+
+  .prop-house{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0px;
+  }
+/* PGS */
+  .prop-section-pg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 4px 0px;
+    padding:20px 2px;
+  }
+  .prop-pg{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0px;
+  }
+
+  .prop-label-pg{
+    margin: 4px 0px;
+    padding: 5px 0px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #535151;
+  }
+
+  #checkBoxes label {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    padding-left: 0px !important;
+}
+
+#nearCheckBoxes label {
+    font-size: 13px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 0px !important;
+
+}
+
+/* Room Type & Near By */
+  .multipleSelection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+.mSelection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0px;
+}
+
   } 
+
+
   .location-type{
       margin-top: 5px;
   }
@@ -139,21 +235,66 @@ option{
     padding: 6px;
   }
 
+  /* PG */
+  .prop-section-pg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 4px 0px;
+    padding:12px 2px;
+  }
+
+  .prop-label-pg{
+    margin: 4px 0px;
+    padding: 5px 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #535151;
+  }
+
+  /* House */
+  .prop-section-house{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 4px 0px;
+    padding:12px 2px;
+  }
+
+  .prop-label-house{
+    margin: 4px 0px;
+    padding: 5px 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #535151;
+  }
+
   /* Image */
   .img-prop-section{
-      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 8px 6px;
   }
-  .image-section{
-    display: flex;
-    justify-content: center;
+  .img-section{
     align-items: center;
-    flex-direction: row;
-    margin: 1px;
-    padding: 6px;
+    padding: 2px 2px;
   }
   .img-prop-label{
       font-size: 17px;
       font-weight: 500;
+  }
+  .upload-btn{
+      color: #edede4;
+      background-color: #777e4e;
+      margin-right: 0px;
+      border-radius: 10px; 
+      border: 2px solid grey; 
+  }
+  :hover.upload-btn{
+    background-color: #87914f;
   }
 
   /* Room Type */
