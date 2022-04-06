@@ -146,3 +146,12 @@ h5{
     width: 76px;
     height: 36px;
 }
+
+/* Budget */
+.priceRange{
+    width: 60%;
+}
+.priceRange input{
+    background-color: rgb(120, 140, 155);
+    border-radius: 8px;
+}
