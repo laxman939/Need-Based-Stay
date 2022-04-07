@@ -1,21 +1,20 @@
 .post-property-container{
     font-family: "Roboto";
     background-color: #edede4;
+    text-align: center;
+}
+.stayType-section{
     display: flex;
     justify-content: center;
-    text-align: center;
-    width: 100%;
-    padding: 10px;
+    margin: 5px 2px;
 }
 
 .stay{
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 24%;
-    padding: 5px;
+    width: 10rem;
+    padding: 1px;
     font-weight: 800;
-    background-color: #959e60;
     border-radius: 20px;
 }
 .stay_select{
@@ -31,343 +30,101 @@
 }
 .stay_label{
     width: 100%;
-    padding: 6px;
+    padding: 3px;
     text-align: center;
     font-size: 17px;
     font-family: sans-serif;
     cursor: pointer;
 }
 .stay_label:hover{
-    opacity: 0.7;
+    opacity: 0.8;
 }
 .stay_label:not(:last-of-type){
     border-right: 1px solid burlywood;
 }
 .stay_input:checked + .stay_label{
-    background: rgb(51, 80, 4); 
-    color: rgb(236, 229, 229);
-    font-weight: 900
-}
-legend{
-    font-family: monospace;
-    font-size: larger;
-    font-weight:900;
-}
-
-/* Property */
- select{
-    font-size: 14px;
-    padding: 6px;
-}
-option{
-    background-color: #7a8b8f;
-    font-size: 14px;
-    border: 4px solid green !important;
-    border-radius: 6px;
-}
-
-.prop-section{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    width: 98%;
-    margin: 1px;
-    padding: 6px;
-}
-.prop-label {
-    margin: 4px 0px;
-    padding: 5px 0px;
-    font-size: 15px;
-    font-weight: 500;
-    color: #535151;
-}
-
-.prop-input,
-.prop-button, select{
-    border: none;
-    background: rgb(219, 219, 218);
-    border-radius: 5px;
-}
-
-.prop-button {
-    display: block;
-    margin: 20px auto;
-    width: 20%;
-    height: 2.6rem;
-    border-radius: 10px;
-    color: rgb(24, 18, 2);
-    background-color: rgb(206, 160, 101);
-    font-size: 1rem;
-    font-weight:bolder;
-    cursor: pointer;
-}
-.prop-button:hover{
-    background-color: rgb(165, 110, 7);
-    color: rgb(17, 1, 9);
-    box-shadow: 2px 2px 1px 0px rgb(92, 1, 5);
-}
-
-.prop-input {
-    display: block;
-    width: 100%;
-    height: 2rem;
-    margin-top: 0rem;
-    padding: 0.2rem;
-    font-size: 0.82rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-    text-align: center;
+    background: rgb(74, 112, 12); 
+    color: rgb(250, 236, 236);
+    font-weight: 600;
 }
 @media only screen and (max-width: 500px) {
     .stay{
-        display: flex;
+        display: inline-flex;
         flex-direction: row;
-        justify-self: center;
         justify-content: center;
-        width: 46%;
-        padding: 5px;
-        background-color: #aaaf8e;
+        width: 38%;
+        padding: 1px;
+        font-weight: 600;
+        background-color: #d8dfb5;
         border-radius: 20px;
-        margin:0% 28%;
     }
+    
+ }
 
-    .stay_label{
-        width: 180px;
-        padding: 6px;
-        text-align: center;
-        font-size: 18px;
-        font-family: sans-serif;
-        cursor: pointer;
-    }
-
- /* House */
-  .prop-section-house{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: row;
-    margin: 4px 0px;
-    padding:12px 2px;
-  }
-
-  .prop-label-house{
-    margin: 4px 0px;
-    padding: 5px 0px;
+ /* Property fields */
+ .prop-section-1,.prop-section-2, .prop-section-3, .prop-section-4, .prop-section-5, .prop-section-6{
+     /* background-color: aqua; */
+     display: flex;
+     justify-content: space-around;
+     flex-direction: row;
+     flex-wrap: wrap;
+     padding: 8px;
+     margin: 15px 1px;
+     border-radius: 10px;
+ }
+ .address-section{
+     background-color: rgb(233, 228, 222);
+     padding: 8px;
+     margin: 15px 1px;
+     border-radius: 10px;
+ }
+ .address{
+     color: sienna;
+     font-weight: 600;
+     text-align: left;
+ }
+ .single-prop-add{
+     display: flex;
+     justify-content: space-around;
+ }
+ .roomType, .nearBy{
+     width: 35vw;
+ }
+.single-prop{
     font-size: 15px;
-    font-weight: 500;
-    color: #535151;
-  }
-
-  .prop-house{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 0px;
-  }
-/* PGS */
-  .prop-section-pg{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: row;
-    margin: 4px 0px;
-    padding:20px 2px;
-  }
-  .prop-pg{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 0px;
-  }
-
-  .prop-label-pg{
-    margin: 4px 0px;
-    padding: 5px 0px;
-    font-size: 15px;
-    font-weight: 500;
-    color: #535151;
-  }
-
-  #checkBoxes label {
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    padding-left: 0px !important;
+    margin: 10px;
+    padding: 5px;
 }
-
-#nearCheckBoxes label {
-    font-size: 13px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding-left: 0px !important;
-
-}
-
-/* Room Type & Near By */
-  .multipleSelection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-   
-}
-.mSelection{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 0px;
-}
-
-  } 
-
-
-  .location-type{
-      margin-top: 5px;
-  }
-  /* Near By */
-  .near-prop-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin: 1px;
+.single-prop select{
     padding: 6px;
-  }
-
-  /* PG */
-  .prop-section-pg{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: row;
-    margin: 4px 0px;
-    padding:12px 2px;
-  }
-
-  .prop-label-pg{
-    margin: 4px 0px;
-    padding: 5px 0px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #535151;
-  }
-
-  /* House */
-  .prop-section-house{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: row;
-    margin: 4px 0px;
-    padding:12px 2px;
-  }
-
-  .prop-label-house{
-    margin: 4px 0px;
-    padding: 5px 0px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #535151;
-  }
-
-  /* Image */
-  .img-prop-section{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 8px 6px;
-  }
-  .img-section{
-    align-items: center;
-    padding: 2px 2px;
-  }
-  .img-prop-label{
-      font-size: 17px;
-      font-weight: 500;
-  }
-  .upload-btn{
-      color: #edede4;
-      background-color: #777e4e;
-      margin-right: 0px;
-      border-radius: 10px; 
-      border: 2px solid grey; 
-  }
-  :hover.upload-btn{
-    background-color: #87914f;
-  }
-
-  /* Room Type */
-  .multipleSelection {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-   
-}
-.mSelection{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-/* #select-option{
-    color: #819705;
-    background-color: #4F615E;
-} */
-
-.selectBox {
-    position: relative;
-    z-index: 10;
-}
-
-.selectBox select {
-    width: 100%;
-    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid gray;
+    box-shadow: 1px 2px 0px 0px gray;
+    cursor: pointer;
   
 }
-
-.overSelect {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-   
+.single-prop select:hover{
+    border: 2px solid rgb(156, 6, 26);
 }
 
-#checkBoxes {
-    color: #201d02;
-    border-radius: 5px;
-    z-index: 1;
+.prop-input{
+    border-radius: 10px;
 }
 
-#checkBoxes label {
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    padding-left: 25px;
-
+.single-prop .prop-input:hover{
+    border: 2px solid rgb(156, 6, 26);
 }
-
-#checkBoxes label:hover {
-    background-color: #778180;
-    border-radius: 5px;
+.prop-button{
+    font-size: 18px;
+    margin: 2px 1px 20px 1px;
+    border-radius: 10px;
+    padding: 8px;
+    color: sienna;
 }
-/* Near By */
-#nearCheckBoxes {
-    color: #201d02;
-    border-radius: 5px;
-    z-index: 1;
+.prop-button:hover{
+    border: 2px solid green;
 }
-
-#nearCheckBoxes label {
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    padding-left: 25px;
-
-}
-
-#nearCheckBoxes label:hover {
-    background-color: #778180;
-    border-radius: 5px;
+.roomType::after{
+    background-color: aqua;
+    cursor: pointer;
 }

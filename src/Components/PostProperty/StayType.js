@@ -23,12 +23,12 @@ function StayType() {
             className="stay_input"
             type="radio"
             name="myRadio"
-            value="house"
-            id="myRadio1"
+            value="pg"
+            id="myRadio2"
             onClick={selectStay}
           />
-          <label className="stay_label" htmlFor="myRadio1">
-            House
+          <label className="stay_label" htmlFor="myRadio2">
+            PG
           </label>
         </div>
         <div className="stay_select">
@@ -36,12 +36,12 @@ function StayType() {
             className="stay_input"
             type="radio"
             name="myRadio"
-            value="pg"
-            id="myRadio2"
+            value="house"
+            id="myRadio1"
             onClick={selectStay}
           />
-          <label className="stay_label" htmlFor="myRadio2">
-            PG
+          <label className="stay_label" htmlFor="myRadio1">
+            House
           </label>
         </div>
       </div>

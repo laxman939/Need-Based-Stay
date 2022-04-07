@@ -1,14 +1,21 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import StayType from "./StayType";
 import "./style.css";
 
 import { useSelector } from "react-redux";
 
+import { Form, Select, Button, Upload } from "antd";
+
+import { UploadOutlined } from "@ant-design/icons";
+
 function PostProperty() {
+  const { Option } = Select;
+
   const click = useSelector((state) => state.PostClick.postClick);
+  console.log("click " + click);
 
-  const [pg, setPg] = useState({
-    propertyType: "PG",
+  const [stays, setStays] = useState({
+    propertyType: click,
     ownerName: "",
     propertyName: "",
     phoneNumber: "",
@@ -18,72 +25,42 @@ function PostProperty() {
     roomType: "",
     propertyImage: [],
     nearBy: [],
+    address: "",
+    State: "",
+    Pcode: "",
   });
-
-  const [house, setHouse] = useState({
-    propertyType: "HOUSE",
-    ownerName: "",
-    propertyName: "",
-    phoneNumber: "",
-    location: "",
-    preference: "",
-    locationType: "",
-    roomType: "",
-    propertyImage: [],
-    nearBy: [],
-  });
-  // Near By
-  let [showNearBy, setShowNearBy] = useState(false);
-  const nearRef = useRef();
-
-  function nearCheckBoxes() {
-    if (!showNearBy) {
-      nearRef.current.style.display = "block";
-    } else {
-      nearRef.current.style.display = "none";
-    }
-  }
-
-  // Room Type
-  let [showRoomType, setShowRoomType] = useState(true);
-  const showRef = useRef();
-
-  function showCheckBoxes() {
-    if (showRoomType) {
-      showRef.current.style.display = "block";
-    } else {
-      showRef.current.style.display = "none";
-    }
-  }
 
   // To get values
   function handleChange(e) {
-    setHouse({
+    setStays({
       [e.target.name]: e.target.value,
     });
 
-    setPg({
-      [e.target.name]: e.target.value,
-    });
+    console.log("stays phoneNumber" + stays.phoneNumber);
   }
-  if (click === "house") {
-    // console.log("house " + house.propertyName + house.location);
-  }
-  if (click === "pg") {
-    // console.log("pg " + pg.propertyName + pg.location);
-  }
+
+  // Images
+  const normFile = (e) => {
+    console.log("Upload event:", e);
+
+    if (Array.isArray(e)) {
+      return e;
+    }
+
+    return e && e.fileList;
+  };
 
   return (
     <>
       <form className="post-property-container">
         <fieldset>
           <legend>Property Details</legend>
-          <div className="stay-select">
+          <div className="stayType-section">
             <StayType />
           </div>
 
-          <div className="prop-section">
-            <div>
+          <div className="prop-section-1">
+            <div className="single-prop">
               <label htmlFor="ownerName" className="prop-label">
                 Owner Name: &nbsp;
               </label>
@@ -92,12 +69,12 @@ function PostProperty() {
                 id="ownerName"
                 name="ownerName"
                 className="prop-input"
-                value={house.ownerName}
+                value={stays.ownerName}
                 onChange={handleChange}
               />
             </div>
 
-            <div>
+            <div className="single-prop">
               <label htmlFor="pName" className="prop-label">
                 Property Name: &nbsp;
               </label>
@@ -106,117 +83,130 @@ function PostProperty() {
                 id="pName"
                 name="propertyName"
                 className="prop-input"
-                value={house.propertyName}
+                value={stays.propertyName}
                 onChange={handleChange}
               />
             </div>
-          </div>
-
-          <div className="prop-section">
-            <div>
+            <div className="single-prop">
               <label htmlFor="phoneNumber" className="prop-label">
-                Phone Number: &nbsp;
+                Phone: &nbsp;
               </label>
               <input
                 type="text"
                 id="phoneNumber"
                 name="phoneNumber"
                 className="prop-input"
-                value={house.phoneNumber}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="pLocation" className="prop-label">
-                Property Location: &nbsp;
-              </label>
-              <input
-                type="text"
-                id="pLocation"
-                name="location"
-                className="prop-input"
-                value={house.location}
+                value={stays.phoneNumber}
                 onChange={handleChange}
               />
             </div>
           </div>
 
+          <div className="address-section">
+            <div className="address">
+              <span>Address</span>
+            </div>
+            <div className="prop-section-2">
+              <div className="single-prop">
+                <label htmlFor="pLocation" className="prop-label">
+                  Address: &nbsp;
+                </label>
+                <input
+                  type="text"
+                  id="pLocation"
+                  name="location"
+                  className="prop-input"
+                  value={stays.address}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div className="single-prop">
+                <label htmlFor="pLocation" className="prop-label">
+                  City/Town: &nbsp;
+                </label>
+                <input
+                  type="text"
+                  id="pLocation"
+                  name="location"
+                  className="prop-input"
+                  value={stays.location}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="single-prop">
+                <label htmlFor="pLocation" className="prop-label">
+                  State: &nbsp;
+                </label>
+                <input
+                  type="text"
+                  id="pLocation"
+                  name="location"
+                  className="prop-input"
+                  value={stays.State}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="single-prop">
+                <label htmlFor="pLocation" className="prop-label">
+                  Postal Code: &nbsp;
+                </label>
+                <input
+                  type="text"
+                  id="pLocation"
+                  name="location"
+                  className="prop-input"
+                  value={stays.Pcode}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="prop-section-2"></div> */}
+
           {click === "pg" && (
-            <>
-              <div className="prop-section-pg">
-                <div className="prop-pg">
-                  <label htmlFor="preference" className="prop-label-pg">
-                    Preference: &nbsp;
-                  </label>
-                  <select id="preference">
-                    <option value="both">Both</option>
-                    <option value="Students">Students</option>
-                    <option value="Professionals">Professionals</option>
-                  </select>
-                </div>
-
-                <div className="prop-pg">
-                  <label htmlFor="gender" className="prop-label-pg">
-                    Gender: &nbsp;
-                  </label>
-                  <select id="gender">
-                    <option value=""></option>
-                    <option value="both">Both</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                  </select>
-                </div>
-                <div className="prop-pg">
-                  <label
-                    htmlFor="property-type"
-                    className="prop-label-pg location-type"
-                  >
-                    Location Type: &nbsp;
-                  </label>
-                  <select id="property-type">
-                    <option value="none">None</option>
-                    <option value="city">City</option>
-                    <option value="outskirts">Outskirts</option>
-                  </select>
-                </div>
-              </div>
-            </>
-          )}
-
-          <div className="prop-section">{/*  priceRange-- Todo */}</div>
-
-          {click === "house" && (
-            <div className="prop-section-house">
-              <div className="prop-house">
-                <label htmlFor="houseType" className="prop-label-house">
-                  House Type: &nbsp;
+            <div className="prop-section-3">
+              <div className="single-prop">
+                <label htmlFor="preference" className="prop-label-pg">
+                  Preference: &nbsp;
                 </label>
-                <select id="houseType">
-                  <option value="flat">Flat</option>
-                  <option value="independent">Independent</option>
-                  <option value="gatedCommunity">Gated Community</option>
+                <select
+                  id="preference"
+                  onChange={(e) => console.log("preferences " + e.target.value)}
+                >
+                  <option value="both">Both</option>
+                  <option value="Students">Students</option>
+                  <option value="Professionals">Professionals</option>
                 </select>
               </div>
 
-              <div className="prop-house">
-                <label htmlFor="househtmlFor" className="prop-label-house">
-                  House For: &nbsp;
+              <div className="single-prop">
+                <label htmlFor="gender" className="prop-label-pg">
+                  Gender: &nbsp;
                 </label>
-                <select id="househtmlFor">
-                  <option value="anyone">Anyone</option>
-                  <option value="family">Family</option>
-                  <option value="bachelors">Bachelor's</option>
+                <select
+                  id="gender"
+                  onChange={(e) => console.log("Gender " + e.target.value)}
+                >
+                  <option value="both">Both</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
                 </select>
               </div>
-              <div className="prop-house">
+              <div className="single-prop">
                 <label
                   htmlFor="property-type"
-                  className="prop-label-house location-type"
+                  className="prop-label-pg location-type"
                 >
                   Location Type: &nbsp;
                 </label>
-                <select id="property-type">
+                <select
+                  id="property-type"
+                  onChange={(e) =>
+                    console.log("Location Type " + e.target.value)
+                  }
+                >
                   <option value="none">None</option>
                   <option value="city">City</option>
                   <option value="outskirts">Outskirts</option>
@@ -225,113 +215,157 @@ function PostProperty() {
             </div>
           )}
 
-          <div className="multipleSelection">
-            <div className="mSelection">
-              <label htmlFor="nearBy" className="prop-label">
-                Near By
-              </label>
-              <div
-                className="selectBox"
-                onClick={() => {
-                  nearCheckBoxes();
-                  setShowNearBy(!showNearBy);
-                }}
-              >
-                <select id="nearBy">
-                  <option id="near-select-option">Select options</option>
+          <div className="prop-section">{/*  priceRange-- Todo */}</div>
+
+          {click === "house" && (
+            <div className="prop-section-4">
+              <div className="single-prop">
+                <label htmlFor="houseType" className="prop-label">
+                  House Type: &nbsp;
+                </label>
+                <select
+                  id="houseType"
+                  onChange={(e) => console.log("House Type " + e.target.value)}
+                >
+                  <option value="flat">Flat</option>
+                  <option value="independent">Independent</option>
+                  <option value="gatedCommunity">Gated Community</option>
                 </select>
-                <div className="overSelect"></div>
               </div>
-              <div id="nearCheckBoxes" ref={nearRef}>
-                <label htmlFor="all">
-                  <input type="checkbox" id="all" />
-                  Parks
+
+              <div className="single-prop">
+                <label htmlFor="househtmlFor" className="prop-label-house">
+                  House For: &nbsp;
                 </label>
-                <label htmlFor="first">
-                  <input type="checkbox" id="first" />
-                  Theater
+                <select
+                  id="househtmlFor"
+                  onChange={(e) => console.log("House For " + e.target.value)}
+                >
+                  <option value="anyone">Anyone</option>
+                  <option value="family">Family</option>
+                  <option value="bachelors">Bachelor's</option>
+                </select>
+              </div>
+              <div className="single-prop">
+                <label
+                  htmlFor="property-type"
+                  className="prop-label-house location-type"
+                >
+                  Location Type: &nbsp;
                 </label>
-                <label htmlFor="second">
-                  <input type="checkbox" id="second" />
-                  Bus Stop
-                </label>
-                <label htmlFor="third">
-                  <input type="checkbox" id="third" />
-                  Three Share
-                </label>
-                <label htmlFor="fourth">
-                  <input type="checkbox" id="fourth" />
-                  Four Share
-                </label>
+                <select
+                  id="property-type"
+                  onChange={(e) =>
+                    console.log("Location Type House " + e.target.value)
+                  }
+                >
+                  <option value="none">None</option>
+                  <option value="city">City</option>
+                  <option value="outskirts">Outskirts</option>
+                </select>
               </div>
             </div>
+          )}
 
-            {click === "pg" && (
-              <div className="mSelection">
-                <label htmlFor="roomType" className="prop-label">
-                  Room Type:
-                </label>
-                <div
-                  className="selectBox"
-                  onClick={() => {
-                    showCheckBoxes();
-                    setShowRoomType(!showRoomType);
-                  }}
+          {click === "pg" && (
+            <div className="prop-section-5">
+              <div className="roomType single-prop">
+                <Form.Item
+                  name="select-multiple"
+                  label="Rooms: "
+                  rules={[
+                    {
+                      message: `Room Types`,
+                      type: "array",
+                    },
+                  ]}
                 >
-                  <select id="roomType">
-                    <option id="select-option">Select options</option>
-                  </select>
-                  <div className="overSelect"></div>
-                </div>
-                <div id="checkBoxes" ref={showRef}>
-                  <label htmlFor="all">
-                    <input type="checkbox" id="all" />
-                    all
-                  </label>
-                  <label htmlFor="first">
-                    <input type="checkbox" id="first" />
-                    Single Share
-                  </label>
-                  <label htmlFor="second">
-                    <input type="checkbox" id="second" />
-                    Two Share
-                  </label>
-                  <label htmlFor="third">
-                    <input type="checkbox" id="third" />
-                    Three Share
-                  </label>
-                  <label htmlFor="fourth">
-                    <input type="checkbox" id="fourth" />
-                    Four Share
-                  </label>
-                </div>
+                  <Select
+                    mode="multiple"
+                    placeholder="Room Types 🔻"
+                    onChange={(e) => console.log("Room " + e)}
+                  >
+                    <Option value="All">All</Option>
+                    <Option value="SingleShare">Single Share</Option>
+                    <Option value="TwoShare">Two Share</Option>
+                    <Option value="ThreeShare">Three Share</Option>
+                    <Option value="FourShare">Four Share</Option>
+                  </Select>
+                </Form.Item>
+              </div>
+
+              <div className="nearBy single-prop">
+                <Form.Item
+                  name="select-multiple"
+                  label="Near By: "
+                  rules={[
+                    {
+                      message: `Near By Places`,
+                      type: "array",
+                    },
+                  ]}
+                >
+                  <Select
+                    className="select"
+                    mode="multiple"
+                    placeholder="Near By Places 🔻"
+                    onChange={(e) => console.log("Near By PG " + e)}
+                  >
+                    <Option value="BusStop">Bus Stop</Option>
+                    <Option value="MetroStation">Metro Station</Option>
+                    <Option value="Parks">Parks</Option>
+                    <Option value="Theater">Theater</Option>
+                    <Option value="Airport">Airport</Option>
+                  </Select>
+                </Form.Item>
+              </div>
+            </div>
+          )}
+
+          <div className="prop-section-6">
+            {click === "house" && (
+              <div className="nearBy single-prop">
+                <Form.Item
+                  name="select-multiple"
+                  label="Near By:: "
+                  rules={[
+                    {
+                      message: `Near By Places`,
+                      type: "array",
+                    },
+                  ]}
+                >
+                  <Select
+                    className="select"
+                    mode="multiple"
+                    placeholder="Near By Places 🔻"
+                    onSelect={(e) => console.log("Near By House" + e)}
+                  >
+                    <Option value="BusStop">Bus Stop</Option>
+                    <Option value="MetroStation">Metro Station</Option>
+                    <Option value="Parks">Parks</Option>
+                    <Option value="Theater">Theater</Option>
+                    <Option value="Airport">Airport</Option>
+                  </Select>
+                </Form.Item>
               </div>
             )}
-          </div>
 
-          <div className="img-prop-section">
-            <label htmlFor="property-pics" className="img-prop-label">
-              Images
-            </label>
-
-            <div className="img-section">
-              <input
-                type="file"
-                id="property-pics"
-                className="img-prop-input"
-                name="propertyImage"
-                value={house.propertyImage}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="img-section">
-              <button type="submit" className="upload-btn">
-                Upload
-              </button>
+            <div className="single-prop">
+              <Form.Item
+                name="upload"
+                label="Upload"
+                valuePropName="fileList"
+                getValueFromEvent={normFile}
+              >
+                <Upload name="logo" action="/upload.do" listType="picture">
+                  <Button icon={<UploadOutlined />}>Click to upload</Button>
+                </Upload>
+              </Form.Item>
             </div>
           </div>
 
-          <button type="submit" className="prop-button">
+          <button type="submit" className="prop-button btn-secondary">
             Submit
           </button>
         </fieldset>
