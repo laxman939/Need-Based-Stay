@@ -1,19 +1,22 @@
 import React from "react";
 
+import FormLabel from "@mui/material/FormLabel";
+
 export default function BudgetRange() {
   return (
     <React.Fragment>
-      <label for="customRange3" class="form-label">
-        Price Range
-      </label>
-      <input
-        type="range"
-        class="form-range"
-        min="0"
-        max="5"
-        step="1"
-        id="customRange3"
-      />
+      <FormLabel id="roomtype">Budget Range: </FormLabel>
+      <div className="priceRange">
+        <input
+          type="range"
+          class="form-range"
+          min="4000"
+          max="8000"
+          step="1000"
+          id="customRange1"
+        />
+        <p className="price">Price:</p>
+      </div>
     </React.Fragment>
   );
 }

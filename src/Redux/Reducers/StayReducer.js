@@ -7,8 +7,7 @@ const {
   POST_CLICK,
   SIGNUP_CLICK,
   SIGNIN_CLICK,
-  OWNER_NAME,
-  USER_NAME,
+  USERNAME,
 } = ActionTypes;
 
 export let initialState = {
@@ -18,8 +17,7 @@ export let initialState = {
   signup: false,
   signin: false,
   postClick: "",
-  owner: "",
-  user: "",
+  userName: "",
 };
 
 // To store fetched data
@@ -107,25 +105,12 @@ export function PostClickReducer(state = initialState, action) {
 }
 
 // To store owner name and user name
-export function OwnerNameReducer(state = initialState, action) {
-  switch (action.type) {
-    case OWNER_NAME:
-      return {
-        ...state,
-        owner: action.payload,
-      };
-
-    default:
-      return state;
-  }
-}
-
 export function UserNameReducer(state = initialState, action) {
   switch (action.type) {
-    case USER_NAME:
+    case USERNAME:
       return {
         ...state,
-        user: action.payload,
+        userName: action.payload,
       };
 
     default:

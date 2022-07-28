@@ -6,6 +6,7 @@ import StayClickReducer, {
   OwnerNameReducer,
   UserNameReducer,
   PostClickReducer,
+  SignupClickReducer,
 } from "./StayReducer";
 // imported default export and normal export
 
@@ -13,9 +14,10 @@ const reducers = combineReducers({
   Stays: fetchStaysReducer,
   StayClick: StayClickReducer,
   Role: RoleReducer,
-  Owner: OwnerNameReducer,
-  User: UserNameReducer,
+  UserName: UserNameReducer,
   PostClick: PostClickReducer,
+  Signup: SignupClickReducer,
+  Signin: SignupClickReducer,
 });
 
 export default reducers;

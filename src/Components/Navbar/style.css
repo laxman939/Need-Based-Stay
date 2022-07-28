@@ -41,7 +41,7 @@
     border-radius: 5px;
     margin: 0px 5px;
     text-decoration: none;
-    padding:0rem 3rem;
+    padding:0rem 1rem;
 }
 :hover.link{
     color: rgb(170, 14, 14);

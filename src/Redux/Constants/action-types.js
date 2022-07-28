@@ -6,4 +6,5 @@ export const ActionTypes = {
   SIGNUP_CLICK: "SIGNUP_CLICK",
   SIGNIN_CLICK: "SIGNIN_CLICK",
   POST_CLICK: "POST_CLICK",
+  USERNAME: "USERNAME",
 };

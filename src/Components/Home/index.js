@@ -14,6 +14,7 @@ import HouseResults from "./HouseResults";
 import PgResults from "./PgResults";
 
 import { useSelector } from "react-redux";
+import BudgetRange from "./Filters/BudgetRange";
 
 function Home() {
   const stayClickType = useSelector((state) => state.StayClick.stayClick);
@@ -46,6 +47,9 @@ function Home() {
                 <div className="form-box">
                   <AreaTypeFilter />
                 </div>
+                <div className="form-box">
+                  <BudgetRange />
+                </div>
               </>
             )}
             {stayClickType === "pgs" && (
@@ -62,11 +66,15 @@ function Home() {
                 <div className="form-box">
                   <AreaTypeFilter />
                 </div>
+                <div className="form-box">
+                  <BudgetRange />
+                </div>
               </>
             )}
           </Col>
           <Col>
-            {stayClickType === "pgs" ? <PgResults /> : <HouseResults />}
+            {stayClickType === "pgs" && <PgResults />}
+            {stayClickType === "houses" && <HouseResults />}
           </Col>
         </Row>
       </Container>

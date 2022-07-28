@@ -1,20 +1,23 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "./styles.css";
 
 function UserPage() {
+  const name = useSelector((state) => state.UserName.userName);
+
   const [profileImg, setProfileImg] = useState(
     "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
   );
 
-  const imageHandler = (e) => {
-    const reader = new FileReader();
+  function handleImage(e) {
+    let filesArray = Array.from(e.target.files).map((file) =>
+      URL.createObjectURL(file)
+    );
 
-    reader.onload = () => {
-      if (reader.readyState === 2) {
-        setProfileImg(reader.result);
-      }
-    };
-  };
+    console.log("filesArray " + filesArray);
+
+    setProfileImg(filesArray);
+  }
 
   return (
     <>
@@ -32,7 +35,7 @@ function UserPage() {
                 accept="image/*"
                 name="image-upload"
                 id="input"
-                onChange={() => imageHandler}
+                onChange={handleImage}
               />
               <div className="label-img">
                 <label className="image-upload" htmlFor="input">
@@ -41,7 +44,7 @@ function UserPage() {
                 </label>
               </div>
             </div>
-            <h3>Name:</h3>
+            <h3>UserName:{name}</h3>
             <p>Mail: </p>
           </div>
         </div>

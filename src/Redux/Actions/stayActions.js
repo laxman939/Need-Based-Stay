@@ -8,8 +8,7 @@ const {
   ROLE,
   SIGNIN_CLICK,
   SIGNUP_CLICK,
-  USER_NAME,
-  OWNER_NAME,
+  USERNAME,
   POST_CLICK,
 } = ActionTypes;
 
@@ -64,15 +63,9 @@ export const postClickAction = (status) => {
 };
 
 // To display in profile page ownername and username
-export function getOwnerName(name) {
-  return {
-    type: OWNER_NAME,
-    payload: name,
-  };
-}
 export function getUserName(name) {
   return {
-    type: USER_NAME,
+    type: USERNAME,
     payload: name,
   };
 }

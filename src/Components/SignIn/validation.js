@@ -1,5 +1,11 @@
 const Validation = (values) => {
   let errors = {};
+
+  // userName
+  if (!values.userName) {
+    errors.userName = "Name is required.";
+  }
+
   //For mail
   if (!values.mail) {
     errors.mail = "Eamil is required.";
